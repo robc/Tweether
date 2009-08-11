@@ -15,7 +15,7 @@
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 
-- (NSArray *)loadSavedTermsFromDisk;
+- (NSMutableArray *)loadSavedTermsFromDisk;
 
 @end
 

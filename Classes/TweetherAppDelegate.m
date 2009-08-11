@@ -7,6 +7,7 @@
 //
 
 #import "TweetherAppDelegate.h"
+#import "SearchTermTableViewController.h"
 
 @implementation TweetherAppDelegate
 
@@ -15,17 +16,19 @@
 - (void)applicationDidFinishLaunching:(UIApplication *)application
 {
 	navigationController = [[UINavigationController alloc] init];
+	SearchTermTableViewController *searchTermTableViewController = [[SearchTermTableViewController alloc] initWithStyle:UITableViewStylePlain];
 	
-	NSArray *termsArray = [self loadSavedTermsFromDisk];
+	NSMutableArray *termsArray = [self loadSavedTermsFromDisk];
+	searchTermTableViewController.termsArray = termsArray;
 	[termsArray release];
 	
     // Override point for customization after application launch
+	[navigationController pushViewController:searchTermTableViewController animated:NO];
 	[window addSubview:navigationController.view];
     [window makeKeyAndVisible];
 }
 
-
-- (NSArray *)loadSavedTermsFromDisk
+- (NSMutableArray *)loadSavedTermsFromDisk
 {
 	return [[NSMutableArray alloc] initWithCapacity:100];
 }

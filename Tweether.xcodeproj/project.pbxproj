@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0ABFEA57103234DB00F707BA /* SearchTermTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABFEA56103234DB00F707BA /* SearchTermTableViewController.m */; };
 		1D3623260D0F684500981E51 /* TweetherAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* TweetherAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0ABFEA55103234DB00F707BA /* SearchTermTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTermTableViewController.h; sourceTree = "<group>"; };
+		0ABFEA56103234DB00F707BA /* SearchTermTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTermTableViewController.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* TweetherAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetherAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* TweetherAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetherAppDelegate.m; sourceTree = "<group>"; };
@@ -45,10 +48,20 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0ABFEA541032346C00F707BA /* Controllers */,
 				1D3623240D0F684500981E51 /* TweetherAppDelegate.h */,
 				1D3623250D0F684500981E51 /* TweetherAppDelegate.m */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		0ABFEA541032346C00F707BA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0ABFEA55103234DB00F707BA /* SearchTermTableViewController.h */,
+				0ABFEA56103234DB00F707BA /* SearchTermTableViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
@@ -154,6 +167,7 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* TweetherAppDelegate.m in Sources */,
+				0ABFEA57103234DB00F707BA /* SearchTermTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
