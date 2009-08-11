@@ -1,0 +1,4 @@
+build/**/*
+.DS_Store
+Tweether.xcodeproj/*.pbxuser
+Tweether.xcodeproj/*.mode1v3
