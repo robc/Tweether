@@ -12,28 +12,31 @@
 
 @synthesize termsArray;
 
+#pragma mark Our custom methods
+- (void)addSearchTerm:(id)sender
+{
+	;
+}
+
 - (void)saveTermsArrayToDisk
 {
 	;
 }
 
-/*
-- (id)initWithStyle:(UITableViewStyle)style {
-    // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-    if (self = [super initWithStyle:style]) {
-    }
-    return self;
-}
-*/
-
-/*
-- (void)viewDidLoad {
+#pragma mark Methods from UIViewController
+- (void)viewDidLoad
+{
     [super viewDidLoad];
 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	UIBarButtonItem *addBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+																					 target:self
+																					 action:@selector(addSearchTerm:)];
+	
+	self.navigationItem.rightBarButtonItem = addBarButtonItem;
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+	
+	[addBarButtonItem release];
 }
-*/
 
 /*
 - (void)viewWillAppear:(BOOL)animated {

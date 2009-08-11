@@ -16,6 +16,7 @@
 
 @property (nonatomic, retain) NSMutableArray *termsArray;
 
+- (void)addSearchTerm:(id)sender;
 - (void)saveTermsArrayToDisk; // Maybe? Think about it a bit.
 
 @end
