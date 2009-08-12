@@ -1,58 +1,38 @@
 //
-//  SearchTermTableViewController.m
+//  SearchTermEntryTableViewController.m
 //  Tweether
 //
 //  Created by Rob Caporetto on 12/08/09.
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
-#import "SearchTermTableViewController.h"
+#import "SearchTermEntryTableViewController.h"
 
-@implementation SearchTermTableViewController
 
-@synthesize termsArray;
+@implementation SearchTermEntryTableViewController
 
-#pragma mark Our custom methods
-- (void)showAddSearchTerm:(id)sender
+@synthesize delegate;
+
+#pragma mark SearchTermEntryTableViewController methods
+- (void)cancelButtonPressed:(id)sender
 {
-	// alloc/init term entry controller
-	// termEntryController.delegate = self;
-	// [self presentModalViewController:modalViewController animated:YES];
-	// release term entry controller
+	if ([delegate respondsToSelector:@selector(didCancelSearchTermEntry)])
+		[delegate didCancelSearchTermEntry];
 }
 
-- (void)didAddSearchTerm:(NSString *)searchTerm;
+- (void)doneButtonPressed:(id)sender
 {
-	// Add term to termsArray
-	// [self dismissModalViewControllerAnimated:YES];
-	
-	// NB: Do we want to sort the terms out? Or is it unnecessary?
-	[self.tableView reloadData];
+	if ([delegate respondsToSelector:@selector(didAddSearchTerm:)])
+		[delegate didAddSearchTerm:@""]; // Should pull the right value out.
 }
 
-- (void)didCancelSearchTermEntry
-{
-	// [self dismissModalViewControllerAnimated:YES];
-}
-
-- (void)saveTermsArrayToDisk
-{
-	;
-}
-
-#pragma mark Methods from UIViewController
+#pragma mark UIViewController methods
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-	UIBarButtonItem *addBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-																					 target:self
-																					 action:@selector(showAddSearchTerm:)];
-	self.navigationItem.title = @"Search Terms";
-	self.navigationItem.rightBarButtonItem = addBarButtonItem;
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-	
-	[addBarButtonItem release];
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 /*
@@ -100,22 +80,21 @@
 
 
 #pragma mark Table view methods
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView 
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
 }
 
-
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [termsArray count];
+    return 1;
 }
-
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+{    
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -129,6 +108,7 @@
     return cell;
 }
 
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
@@ -136,6 +116,7 @@
 	// [self.navigationController pushViewController:anotherViewController];
 	// [anotherViewController release];
 }
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -145,23 +126,8 @@
 }
 */
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
 - (void)dealloc
 {
-	[termsArray release];
     [super dealloc];
 }
 

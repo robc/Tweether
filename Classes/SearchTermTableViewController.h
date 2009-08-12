@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@protocol SearchTermEntryDelegate<NSObject>
-- (void)didAddSearchTerm:(NSString *)searchTerm;
-@end
+#import "SearchTermEntryDelegate.h"
 
 @interface SearchTermTableViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate, SearchTermEntryDelegate>
 {

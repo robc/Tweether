@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0ABFEA57103234DB00F707BA /* SearchTermTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABFEA56103234DB00F707BA /* SearchTermTableViewController.m */; };
+		0ABFEAE11032477F00F707BA /* SearchTermEntryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABFEAE01032477F00F707BA /* SearchTermEntryTableViewController.m */; };
 		1D3623260D0F684500981E51 /* TweetherAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* TweetherAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -19,6 +20,9 @@
 /* Begin PBXFileReference section */
 		0ABFEA55103234DB00F707BA /* SearchTermTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTermTableViewController.h; sourceTree = "<group>"; };
 		0ABFEA56103234DB00F707BA /* SearchTermTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTermTableViewController.m; sourceTree = "<group>"; };
+		0ABFEADF1032477F00F707BA /* SearchTermEntryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTermEntryTableViewController.h; sourceTree = "<group>"; };
+		0ABFEAE01032477F00F707BA /* SearchTermEntryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTermEntryTableViewController.m; sourceTree = "<group>"; };
+		0ABFEAE2103247BA00F707BA /* SearchTermEntryDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTermEntryDelegate.h; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* TweetherAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetherAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* TweetherAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetherAppDelegate.m; sourceTree = "<group>"; };
@@ -60,6 +64,9 @@
 			children = (
 				0ABFEA55103234DB00F707BA /* SearchTermTableViewController.h */,
 				0ABFEA56103234DB00F707BA /* SearchTermTableViewController.m */,
+				0ABFEADF1032477F00F707BA /* SearchTermEntryTableViewController.h */,
+				0ABFEAE01032477F00F707BA /* SearchTermEntryTableViewController.m */,
+				0ABFEAE2103247BA00F707BA /* SearchTermEntryDelegate.h */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -168,6 +175,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* TweetherAppDelegate.m in Sources */,
 				0ABFEA57103234DB00F707BA /* SearchTermTableViewController.m in Sources */,
+				0ABFEAE11032477F00F707BA /* SearchTermEntryTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
