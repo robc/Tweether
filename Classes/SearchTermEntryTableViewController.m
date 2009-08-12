@@ -31,8 +31,21 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	self.navigationItem.title = @"Add Search Term";
+	
+	UIBarButtonItem *cancelButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel"
+																		style:UIBarButtonItemStyleBordered
+																	   target:self
+																	   action:@selector(cancelButtonPressed:)];
+	self.navigationItem.leftBarButtonItem = cancelButtonItem;
+	[cancelButtonItem release];
+	
+	UIBarButtonItem *doneButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done"
+																	  style:UIBarButtonItemStyleDone 
+																	 target:self
+																	 action:@selector(doneButtonPressed:)];
+	self.navigationItem.rightBarButtonItem = doneButtonItem;
+	[doneButtonItem release];
 }
 
 /*

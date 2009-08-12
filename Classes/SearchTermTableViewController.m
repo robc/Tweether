@@ -7,6 +7,7 @@
 //
 
 #import "SearchTermTableViewController.h"
+#import "SearchTermEntryTableViewController.h"
 
 @implementation SearchTermTableViewController
 
@@ -15,16 +16,24 @@
 #pragma mark Our custom methods
 - (void)showAddSearchTerm:(id)sender
 {
-	// alloc/init term entry controller
-	// termEntryController.delegate = self;
-	// [self presentModalViewController:modalViewController animated:YES];
-	// release term entry controller
+	// OFMG. If we add the modalViewController directly, we do not get the NavigationBar!
+	// In order to ensure the bar appears, we must first instantiate another UINavigationController
+	// instance and make it's RootViewController our ModalViewController, then
+	// present the UINavigationController instead of the ViewController.
+	// See: http://www.iphonedevsdk.com/forum/iphone-sdk-development/18705-modal-uiviewcontroller-title-not-showing.html for more information!
+	SearchTermEntryTableViewController *modalViewController = [[SearchTermEntryTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
+	UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:modalViewController];
+	modalViewController.delegate = self;
+
+	[self presentModalViewController:nav animated:YES];
+	[nav release];
+	[modalViewController release];
 }
 
 - (void)didAddSearchTerm:(NSString *)searchTerm;
 {
 	// Add term to termsArray
-	// [self dismissModalViewControllerAnimated:YES];
+	[self dismissModalViewControllerAnimated:YES];
 	
 	// NB: Do we want to sort the terms out? Or is it unnecessary?
 	[self.tableView reloadData];
@@ -32,7 +41,7 @@
 
 - (void)didCancelSearchTermEntry
 {
-	// [self dismissModalViewControllerAnimated:YES];
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)saveTermsArrayToDisk
