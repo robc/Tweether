@@ -93,7 +93,6 @@
 
 
 #pragma mark Table view methods
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -108,28 +107,25 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {    
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"SearchTermEntryCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
 	{
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		NSArray *nibArray = [[NSBundle mainBundle] loadNibNamed:@"SearchTermEntryTableViewCell"
+														  owner:self
+														options:nil];
+		cell = [nibArray objectAtIndex:0];
     }
-    
-    // Set up the cell...
-	
+
     return cell;
 }
 
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
-	// [self.navigationController pushViewController:anotherViewController];
-	// [anotherViewController release];
+	// Need to disable selection here. As the only selection required is the entering of
+	// a search term (via its text-field).
 }
-
 
 /*
 // Override to support conditional editing of the table view.

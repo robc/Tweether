@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0ABFEA57103234DB00F707BA /* SearchTermTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABFEA56103234DB00F707BA /* SearchTermTableViewController.m */; };
 		0ABFEAE11032477F00F707BA /* SearchTermEntryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABFEAE01032477F00F707BA /* SearchTermEntryTableViewController.m */; };
+		0AF74F131032C33700BD7270 /* SearchTermEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74F121032C33700BD7270 /* SearchTermEntryTableViewCell.m */; };
+		0AF74F151032C46D00BD7270 /* SearchTermEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AF74F141032C46D00BD7270 /* SearchTermEntryTableViewCell.xib */; };
 		1D3623260D0F684500981E51 /* TweetherAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* TweetherAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -23,6 +25,9 @@
 		0ABFEADF1032477F00F707BA /* SearchTermEntryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTermEntryTableViewController.h; sourceTree = "<group>"; };
 		0ABFEAE01032477F00F707BA /* SearchTermEntryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTermEntryTableViewController.m; sourceTree = "<group>"; };
 		0ABFEAE2103247BA00F707BA /* SearchTermEntryDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTermEntryDelegate.h; sourceTree = "<group>"; };
+		0AF74F111032C33700BD7270 /* SearchTermEntryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTermEntryTableViewCell.h; sourceTree = "<group>"; };
+		0AF74F121032C33700BD7270 /* SearchTermEntryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTermEntryTableViewCell.m; sourceTree = "<group>"; };
+		0AF74F141032C46D00BD7270 /* SearchTermEntryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTermEntryTableViewCell.xib; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* TweetherAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetherAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* TweetherAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetherAppDelegate.m; sourceTree = "<group>"; };
@@ -67,6 +72,8 @@
 				0ABFEADF1032477F00F707BA /* SearchTermEntryTableViewController.h */,
 				0ABFEAE01032477F00F707BA /* SearchTermEntryTableViewController.m */,
 				0ABFEAE2103247BA00F707BA /* SearchTermEntryDelegate.h */,
+				0AF74F111032C33700BD7270 /* SearchTermEntryTableViewCell.h */,
+				0AF74F121032C33700BD7270 /* SearchTermEntryTableViewCell.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -105,6 +112,7 @@
 			children = (
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Tweether-Info.plist */,
+				0AF74F141032C46D00BD7270 /* SearchTermEntryTableViewCell.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -162,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				0AF74F151032C46D00BD7270 /* SearchTermEntryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +185,7 @@
 				1D3623260D0F684500981E51 /* TweetherAppDelegate.m in Sources */,
 				0ABFEA57103234DB00F707BA /* SearchTermTableViewController.m in Sources */,
 				0ABFEAE11032477F00F707BA /* SearchTermEntryTableViewController.m in Sources */,
+				0AF74F131032C33700BD7270 /* SearchTermEntryTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
