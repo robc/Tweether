@@ -13,9 +13,18 @@
 @synthesize termsArray;
 
 #pragma mark Our custom methods
-- (void)addSearchTerm:(id)sender
+- (void)showAddSearchTerm:(id)sender
 {
-	;
+	// alloc/init term entry controller
+	// termEntryController.delegate = self;
+	// [self presentModalViewController:modalViewController animated:YES];
+	// release term entry controller
+}
+
+- (void)didAddSearchTerm:(NSString *)searchTerm;
+{
+	// Add term to termsArray
+	// [self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)saveTermsArrayToDisk
@@ -30,7 +39,7 @@
 
 	UIBarButtonItem *addBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
 																					 target:self
-																					 action:@selector(addSearchTerm:)];
+																					 action:@selector(showAddSearchTerm:)];
 	
 	self.navigationItem.rightBarButtonItem = addBarButtonItem;
     self.navigationItem.leftBarButtonItem = self.editButtonItem;

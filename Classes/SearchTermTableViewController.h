@@ -8,15 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SearchTermEntryDelegate<NSObject>
+- (void)didAddSearchTerm:(NSString *)searchTerm;
+@end
 
-@interface SearchTermTableViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate>
+@interface SearchTermTableViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate, SearchTermEntryDelegate>
 {
 	NSMutableArray *termsArray;
 }
 
 @property (nonatomic, retain) NSMutableArray *termsArray;
 
-- (void)addSearchTerm:(id)sender;
+- (void)showAddSearchTerm:(id)sender;
 - (void)saveTermsArrayToDisk; // Maybe? Think about it a bit.
 
 @end
