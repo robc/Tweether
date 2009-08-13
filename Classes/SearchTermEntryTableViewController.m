@@ -31,6 +31,7 @@
 	self.navigationItem.rightBarButtonItem.enabled = ([searchTerm length] == 0 ? NO : YES);
 }
 
+#pragma mark -
 #pragma mark UIViewController methods
 - (void)viewDidLoad
 {
@@ -91,6 +92,7 @@
 	// e.g. self.myOutlet = nil;
 }
 
+#pragma mark -
 #pragma mark UITextFieldDelegate methods
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
@@ -104,6 +106,7 @@
 	return YES;
 }
 
+#pragma mark -
 #pragma mark Table view methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -133,13 +136,6 @@
 
     return cell;
 }
-
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//	NSLog(@"didSelectRowAtIndexPath: {%i, %i}", indexPath.section, indexPath.row);
-//	SearchTermEntryTableViewCell *cell = (SearchTermEntryTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
-//	[cell.searchTermTextField becomeFirstResponder];
-//}
 
 - (void)dealloc
 {

@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SearchTermsSaveDelegate.h"
 
-@interface TweetherAppDelegate : NSObject <UIApplicationDelegate> {
+@interface TweetherAppDelegate : NSObject <UIApplicationDelegate, SearchTermsSaveDelegate>
+{
     UIWindow *window;
 	UINavigationController *navigationController;
 }

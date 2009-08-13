@@ -20,9 +20,9 @@
 	
 	NSMutableArray *termsArray = [self loadSavedTermsFromDisk];
 	searchTermTableViewController.termsArray = termsArray;
+	searchTermTableViewController.delegate = self;
 	[termsArray release];
 	
-    // Override point for customization after application launch
 	[navigationController pushViewController:searchTermTableViewController animated:NO];
 	[window addSubview:navigationController.view];
     [window makeKeyAndVisible];
@@ -31,6 +31,11 @@
 - (NSMutableArray *)loadSavedTermsFromDisk
 {
 	return [[NSMutableArray alloc] initWithCapacity:100];
+}
+
+- (void)saveSearchTerms
+{
+	
 }
 
 - (void)dealloc

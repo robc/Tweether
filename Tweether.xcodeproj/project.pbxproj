@@ -25,6 +25,7 @@
 		0ABFEADF1032477F00F707BA /* SearchTermEntryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTermEntryTableViewController.h; sourceTree = "<group>"; };
 		0ABFEAE01032477F00F707BA /* SearchTermEntryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTermEntryTableViewController.m; sourceTree = "<group>"; };
 		0ABFEAE2103247BA00F707BA /* SearchTermEntryDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTermEntryDelegate.h; sourceTree = "<group>"; };
+		0ACB560B1033D8CA00F466FF /* SearchTermsSaveDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTermsSaveDelegate.h; sourceTree = "<group>"; };
 		0AF74F111032C33700BD7270 /* SearchTermEntryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTermEntryTableViewCell.h; sourceTree = "<group>"; };
 		0AF74F121032C33700BD7270 /* SearchTermEntryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTermEntryTableViewCell.m; sourceTree = "<group>"; };
 		0AF74F141032C46D00BD7270 /* SearchTermEntryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTermEntryTableViewCell.xib; sourceTree = "<group>"; };
@@ -74,6 +75,7 @@
 				0ABFEAE2103247BA00F707BA /* SearchTermEntryDelegate.h */,
 				0AF74F111032C33700BD7270 /* SearchTermEntryTableViewCell.h */,
 				0AF74F121032C33700BD7270 /* SearchTermEntryTableViewCell.m */,
+				0ACB560B1033D8CA00F466FF /* SearchTermsSaveDelegate.h */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
