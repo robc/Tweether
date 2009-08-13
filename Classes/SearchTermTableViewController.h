@@ -18,5 +18,6 @@
 
 - (void)showAddSearchTerm:(id)sender;
 - (void)saveTermsArrayToDisk; // Maybe? Think about it a bit.
+- (void)updateEditButtonState;
 
 @end

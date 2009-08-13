@@ -17,10 +17,12 @@
 - (void)showAddSearchTerm:(id)sender
 {
 	// OFMG. If we add the modalViewController directly, we do not get the NavigationBar!
-	// In order to ensure the bar appears, we must first instantiate another UINavigationController
+	// 
+	// To ensure the bar appears, we must first instantiate another UINavigationController
 	// instance and make it's RootViewController our ModalViewController, then
 	// present the UINavigationController instead of the ViewController.
-	// See: http://www.iphonedevsdk.com/forum/iphone-sdk-development/18705-modal-uiviewcontroller-title-not-showing.html for more information!
+	// 
+	// Taken from: http://www.iphonedevsdk.com/forum/iphone-sdk-development/18705-modal-uiviewcontroller-title-not-showing.html
 	SearchTermEntryTableViewController *modalViewController = [[SearchTermEntryTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
 	UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:modalViewController];
 	modalViewController.delegate = self;
@@ -35,6 +37,7 @@
 	[termsArray addObject:searchTerm];
 	[self dismissModalViewControllerAnimated:YES];
 	[self.tableView reloadData];
+	[self updateEditButtonState];
 }
 
 - (void)didCancelSearchTermEntry
@@ -45,6 +48,11 @@
 - (void)saveTermsArrayToDisk
 {
 	;
+}
+
+- (void)updateEditButtonState
+{
+	self.navigationItem.leftBarButtonItem.enabled = ([termsArray count] == 0 ? NO : YES);
 }
 
 #pragma mark Methods from UIViewController
@@ -62,11 +70,12 @@
 	[addBarButtonItem release];
 }
 
-/*
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:animated];
+	[self updateEditButtonState];
 }
-*/
+
 /*
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -105,20 +114,17 @@
 	// e.g. self.myOutlet = nil;
 }
 
-
 #pragma mark Table view methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView 
 {
     return 1;
 }
 
-
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [termsArray count];
 }
-
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -150,6 +156,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete)
 	{
 		[termsArray removeObjectAtIndex:indexPath.row];
+		[self updateEditButtonState];
 		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
 	}
 }
