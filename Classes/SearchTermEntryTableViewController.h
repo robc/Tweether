@@ -19,5 +19,6 @@
 
 - (IBAction)cancelButtonPressed:(id)sender;
 - (IBAction)doneButtonPressed:(id)sender;
+- (void)updateDoneButtonState;
 
 @end

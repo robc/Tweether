@@ -26,6 +26,11 @@
 		[delegate didAddSearchTerm:searchTerm];
 }
 
+- (void)updateDoneButtonState
+{
+	self.navigationItem.rightBarButtonItem.enabled = ([searchTerm length] == 0 ? NO : YES);
+}
+
 #pragma mark UIViewController methods
 - (void)viewDidLoad
 {
@@ -48,16 +53,14 @@
 	[doneButtonItem release];
 }
 
-/*
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-*/
-/*
-- (void)viewDidAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated
+{
     [super viewDidAppear:animated];
+
+	searchTerm = @"";
+	[self updateDoneButtonState];
 }
-*/
+
 /*
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
@@ -79,10 +82,7 @@
 
 - (void)didReceiveMemoryWarning
 {
-	// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
 }
 
 - (void)viewDidUnload
@@ -94,7 +94,8 @@
 #pragma mark UITextFieldDelegate methods
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-	searchTerm = textField.text;	
+	searchTerm = textField.text;
+	[self updateDoneButtonState];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -127,23 +128,18 @@
 														  owner:self
 														options:nil];
 		cell = [nibArray objectAtIndex:0];
+		cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
 
     return cell;
 }
 
-- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	return nil;
-}
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//	NSLog(@"didSelectRowAtIndexPath: {%i, %i}", indexPath.section, indexPath.row);
+//	SearchTermEntryTableViewCell *cell = (SearchTermEntryTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
+//	[cell.searchTermTextField becomeFirstResponder];
+//}
 
 - (void)dealloc
 {
