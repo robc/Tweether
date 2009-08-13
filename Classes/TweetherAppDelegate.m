@@ -9,6 +9,8 @@
 #import "TweetherAppDelegate.h"
 #import "SearchTermTableViewController.h"
 
+#define TermsFileName @"TweetherSavedSearchTerms.plist"
+
 @implementation TweetherAppDelegate
 
 @synthesize window;
@@ -18,7 +20,7 @@
 	navigationController = [[UINavigationController alloc] init];
 	SearchTermTableViewController *searchTermTableViewController = [[SearchTermTableViewController alloc] initWithStyle:UITableViewStylePlain];
 	
-	NSMutableArray *termsArray = [self loadSavedTermsFromDisk];
+	[self loadSavedTermsFromDisk];
 	searchTermTableViewController.termsArray = termsArray;
 	searchTermTableViewController.delegate = self;
 	[termsArray release];
@@ -28,14 +30,16 @@
     [window makeKeyAndVisible];
 }
 
-- (NSMutableArray *)loadSavedTermsFromDisk
+- (void)loadSavedTermsFromDisk
 {
-	return [[NSMutableArray alloc] initWithCapacity:100];
+	termsArray = [[NSMutableArray alloc] initWithCapacity:100];
 }
 
 - (void)saveSearchTerms
 {
-	
+	NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+	NSString *savePath = [documentsDirectory stringByAppendingPathComponent:TermsFileName];
+	[termsArray writeToFile:savePath atomically:YES];
 }
 
 - (void)dealloc

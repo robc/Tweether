@@ -13,11 +13,12 @@
 {
     UIWindow *window;
 	UINavigationController *navigationController;
+	NSMutableArray *termsArray;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 
-- (NSMutableArray *)loadSavedTermsFromDisk;
+- (void)loadSavedTermsFromDisk;
 
 @end
 
