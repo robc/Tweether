@@ -7,23 +7,23 @@
 //
 
 #import "SearchTermEntryTableViewController.h"
-
+#import "SearchTermEntryTableViewCell.h"
 
 @implementation SearchTermEntryTableViewController
 
 @synthesize delegate;
 
 #pragma mark SearchTermEntryTableViewController methods
-- (void)cancelButtonPressed:(id)sender
+- (IBAction)cancelButtonPressed:(id)sender
 {
 	if ([delegate respondsToSelector:@selector(didCancelSearchTermEntry)])
 		[delegate didCancelSearchTermEntry];
 }
 
-- (void)doneButtonPressed:(id)sender
+- (IBAction)doneButtonPressed:(id)sender
 {
 	if ([delegate respondsToSelector:@selector(didAddSearchTerm:)])
-		[delegate didAddSearchTerm:@""]; // Should pull the right value out.
+		[delegate didAddSearchTerm:searchTerm];
 }
 
 #pragma mark UIViewController methods
@@ -33,17 +33,17 @@
 
 	self.navigationItem.title = @"Add Search Term";
 	
-	UIBarButtonItem *cancelButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel"
-																		style:UIBarButtonItemStyleBordered
-																	   target:self
-																	   action:@selector(cancelButtonPressed:)];
+	UIBarButtonItem *cancelButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel"	
+																		 style:UIBarButtonItemStyleBordered
+																		target:self
+																		action:@selector(cancelButtonPressed:)];
 	self.navigationItem.leftBarButtonItem = cancelButtonItem;
 	[cancelButtonItem release];
-	
-	UIBarButtonItem *doneButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done"
-																	  style:UIBarButtonItemStyleDone 
-																	 target:self
-																	 action:@selector(doneButtonPressed:)];
+
+	UIBarButtonItem *doneButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done"	
+																		 style:UIBarButtonItemStyleDone
+																		target:self
+																		action:@selector(doneButtonPressed:)];
 	self.navigationItem.rightBarButtonItem = doneButtonItem;
 	[doneButtonItem release];
 }
@@ -91,6 +91,13 @@
 	// e.g. self.myOutlet = nil;
 }
 
+#pragma mark UITextFieldDelegate methods
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+	searchTerm = textField.text;
+	[textField resignFirstResponder];
+	return YES;
+}
 
 #pragma mark Table view methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -121,10 +128,9 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	// Need to disable selection here. As the only selection required is the entering of
-	// a search term (via its text-field).
+	return nil;
 }
 
 /*

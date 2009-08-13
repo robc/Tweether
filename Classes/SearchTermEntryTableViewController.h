@@ -9,14 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "SearchTermEntryDelegate.h"
 
-@interface SearchTermEntryTableViewController : UITableViewController
+@interface SearchTermEntryTableViewController : UITableViewController<UITextFieldDelegate>
 {
+	NSString *searchTerm;
 	id <SearchTermEntryDelegate> delegate;
 }
 
 @property (nonatomic, assign) id <SearchTermEntryDelegate> delegate;
 
-- (void)cancelButtonPressed:(id)sender;
-- (void)doneButtonPressed:(id)sender;
+- (IBAction)cancelButtonPressed:(id)sender;
+- (IBAction)doneButtonPressed:(id)sender;
 
 @end
