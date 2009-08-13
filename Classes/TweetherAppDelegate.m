@@ -10,6 +10,7 @@
 #import "SearchTermTableViewController.h"
 
 #define TermsFileName @"TweetherSavedSearchTerms.plist"
+#define MaxNumberOfSearchTerms 256
 
 @implementation TweetherAppDelegate
 
@@ -34,7 +35,12 @@
 {
 	NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
 	NSString *loadPath = [documentsDirectory stringByAppendingPathComponent:TermsFileName];
-	termsArray = [[NSMutableArray alloc] initWithContentsOfFile:loadPath];
+	
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+	if ([fileManager fileExistsAtPath:loadPath])
+		termsArray = [[[NSMutableArray alloc] initWithContentsOfFile:loadPath] retain];
+	else
+		termsArray = [[NSMutableArray alloc] initWithCapacity:MaxNumberOfSearchTerms];
 }
 
 - (void)saveSearchTerms
