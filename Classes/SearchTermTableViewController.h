@@ -13,14 +13,11 @@
 @interface SearchTermTableViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate, SearchTermEntryDelegate>
 {
 	NSMutableArray *termsArray;
-	id <SearchTermsSaveDelegate> delegate;
 }
 
-@property (nonatomic, assign) id <SearchTermsSaveDelegate> delegate;
 @property (nonatomic, retain) NSMutableArray *termsArray;
 
 - (void)showAddSearchTerm:(id)sender;
-- (void)saveTermsArray;
 - (void)updateEditButtonState;
 
 @end

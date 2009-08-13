@@ -23,12 +23,16 @@
 	
 	[self loadSavedTermsFromDisk];
 	searchTermTableViewController.termsArray = termsArray;
-	searchTermTableViewController.delegate = self;
 	[termsArray release];
 	
 	[navigationController pushViewController:searchTermTableViewController animated:NO];
 	[window addSubview:navigationController.view];
     [window makeKeyAndVisible];
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application
+{
+	[self saveSearchTerms];
 }
 
 - (void)loadSavedTermsFromDisk

@@ -13,7 +13,6 @@
 @implementation SearchTermTableViewController
 
 @synthesize termsArray;
-@synthesize delegate;
 
 #pragma mark Our custom methods
 - (void)showAddSearchTerm:(id)sender
@@ -40,18 +39,11 @@
 	[self dismissModalViewControllerAnimated:YES];
 	[self.tableView reloadData];
 	[self updateEditButtonState];
-	[self saveTermsArray];
 }
 
 - (void)didCancelSearchTermEntry
 {
 	[self dismissModalViewControllerAnimated:YES];
-}
-
-- (void)saveTermsArray
-{
-	if ([delegate conformsToProtocol:@protocol(SearchTermsSaveDelegate)])
-		[delegate saveSearchTerms];
 }
 
 - (void)updateEditButtonState
