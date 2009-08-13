@@ -92,9 +92,14 @@
 }
 
 #pragma mark UITextFieldDelegate methods
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+	NSLog(@"setting searchTerm to %@", textField.text);
+	searchTerm = textField.text;	
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-	searchTerm = textField.text;
 	[textField resignFirstResponder];
 	return YES;
 }

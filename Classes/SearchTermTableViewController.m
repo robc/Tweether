@@ -32,10 +32,8 @@
 
 - (void)didAddSearchTerm:(NSString *)searchTerm;
 {
-	// Add term to termsArray
+	[termsArray addObject:searchTerm];
 	[self dismissModalViewControllerAnimated:YES];
-	
-	// NB: Do we want to sort the terms out? Or is it unnecessary?
 	[self.tableView reloadData];
 }
 
@@ -131,9 +129,10 @@
     if (cell == nil)
 	{
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-    // Set up the cell...
+    cell.textLabel.text = [termsArray objectAtIndex:indexPath.row];
 	
     return cell;
 }
