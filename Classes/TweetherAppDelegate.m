@@ -32,7 +32,9 @@
 
 - (void)loadSavedTermsFromDisk
 {
-	termsArray = [[NSMutableArray alloc] initWithCapacity:100];
+	NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+	NSString *loadPath = [documentsDirectory stringByAppendingPathComponent:TermsFileName];
+	termsArray = [[NSMutableArray alloc] initWithContentsOfFile:loadPath];
 }
 
 - (void)saveSearchTerms
