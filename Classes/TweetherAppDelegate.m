@@ -8,6 +8,7 @@
 
 #import "TweetherAppDelegate.h"
 #import "SearchTermTableViewController.h"
+#import "TwitterSearchOperation.h"
 
 #define TermsFileName @"TweetherSavedSearchTerms.plist"
 #define MaxNumberOfSearchTerms 256
@@ -18,6 +19,9 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application
 {
+//	TwitterSearchOperation *searchOp = [[TwitterSearchOperation alloc] initWithSearchTerm:@"#xna"];
+//	[searchOp main];
+	
 	navigationController = [[UINavigationController alloc] init];
 	SearchTermTableViewController *searchTermTableViewController = [[SearchTermTableViewController alloc] initWithStyle:UITableViewStylePlain];
 	

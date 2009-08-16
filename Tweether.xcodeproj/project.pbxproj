@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A7612251037BB3B00FB7130 /* TwitterSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7612241037BB3B00FB7130 /* TwitterSearchOperation.m */; };
+		0A7612D9103815FA00FB7130 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7612C9103815FA00FB7130 /* CDataScanner_Extensions.m */; };
+		0A7612DA103815FA00FB7130 /* NSCharacterSet_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7612CB103815FA00FB7130 /* NSCharacterSet_Extensions.m */; };
+		0A7612DB103815FA00FB7130 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7612CD103815FA00FB7130 /* NSDictionary_JSONExtensions.m */; };
+		0A7612DC103815FA00FB7130 /* NSScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7612CF103815FA00FB7130 /* NSScanner_Extensions.m */; };
+		0A7612DD103815FA00FB7130 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7612D2103815FA00FB7130 /* CJSONDeserializer.m */; };
+		0A7612DE103815FA00FB7130 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7612D4103815FA00FB7130 /* CJSONScanner.m */; };
+		0A7612DF103815FA00FB7130 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7612D6103815FA00FB7130 /* CJSONSerializer.m */; };
+		0A7612E0103815FA00FB7130 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7612D8103815FA00FB7130 /* CDataScanner.m */; };
+		0A76133010381D0900FB7130 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A76132F10381D0900FB7130 /* Tweet.m */; };
 		0ABFEA57103234DB00F707BA /* SearchTermTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABFEA56103234DB00F707BA /* SearchTermTableViewController.m */; };
 		0ABFEAE11032477F00F707BA /* SearchTermEntryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABFEAE01032477F00F707BA /* SearchTermEntryTableViewController.m */; };
 		0AF74F131032C33700BD7270 /* SearchTermEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74F121032C33700BD7270 /* SearchTermEntryTableViewCell.m */; };
@@ -20,6 +30,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A7612231037BB3B00FB7130 /* TwitterSearchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterSearchOperation.h; sourceTree = "<group>"; };
+		0A7612241037BB3B00FB7130 /* TwitterSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterSearchOperation.m; sourceTree = "<group>"; };
+		0A7612C8103815FA00FB7130 /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner_Extensions.h; sourceTree = "<group>"; };
+		0A7612C9103815FA00FB7130 /* CDataScanner_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner_Extensions.m; sourceTree = "<group>"; };
+		0A7612CA103815FA00FB7130 /* NSCharacterSet_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSCharacterSet_Extensions.h; sourceTree = "<group>"; };
+		0A7612CB103815FA00FB7130 /* NSCharacterSet_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSCharacterSet_Extensions.m; sourceTree = "<group>"; };
+		0A7612CC103815FA00FB7130 /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
+		0A7612CD103815FA00FB7130 /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_JSONExtensions.m; sourceTree = "<group>"; };
+		0A7612CE103815FA00FB7130 /* NSScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSScanner_Extensions.h; sourceTree = "<group>"; };
+		0A7612CF103815FA00FB7130 /* NSScanner_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSScanner_Extensions.m; sourceTree = "<group>"; };
+		0A7612D1103815FA00FB7130 /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
+		0A7612D2103815FA00FB7130 /* CJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer.m; sourceTree = "<group>"; };
+		0A7612D3103815FA00FB7130 /* CJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONScanner.h; sourceTree = "<group>"; };
+		0A7612D4103815FA00FB7130 /* CJSONScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONScanner.m; sourceTree = "<group>"; };
+		0A7612D5103815FA00FB7130 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
+		0A7612D6103815FA00FB7130 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
+		0A7612D7103815FA00FB7130 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
+		0A7612D8103815FA00FB7130 /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
+		0A76132E10381D0900FB7130 /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
+		0A76132F10381D0900FB7130 /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
+		0A76135C1038214200FB7130 /* TwitterSearchResultDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterSearchResultDelegate.h; sourceTree = "<group>"; };
 		0ABFEA55103234DB00F707BA /* SearchTermTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTermTableViewController.h; sourceTree = "<group>"; };
 		0ABFEA56103234DB00F707BA /* SearchTermTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTermTableViewController.m; sourceTree = "<group>"; };
 		0ABFEADF1032477F00F707BA /* SearchTermEntryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTermEntryTableViewController.h; sourceTree = "<group>"; };
@@ -58,11 +89,82 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0A76135B1038211A00FB7130 /* Delegates */,
+				0A76132D10381CE800FB7130 /* Models */,
+				0A7612221037BB2100FB7130 /* Operations */,
 				0ABFEA541032346C00F707BA /* Controllers */,
+				0A7612BF103815E400FB7130 /* TouchJSON */,
 				1D3623240D0F684500981E51 /* TweetherAppDelegate.h */,
 				1D3623250D0F684500981E51 /* TweetherAppDelegate.m */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		0A7612221037BB2100FB7130 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				0A7612231037BB3B00FB7130 /* TwitterSearchOperation.h */,
+				0A7612241037BB3B00FB7130 /* TwitterSearchOperation.m */,
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
+		0A7612BF103815E400FB7130 /* TouchJSON */ = {
+			isa = PBXGroup;
+			children = (
+				0A7612C7103815FA00FB7130 /* Extensions */,
+				0A7612D0103815FA00FB7130 /* JSON */,
+				0A7612D7103815FA00FB7130 /* CDataScanner.h */,
+				0A7612D8103815FA00FB7130 /* CDataScanner.m */,
+			);
+			name = TouchJSON;
+			sourceTree = "<group>";
+		};
+		0A7612C7103815FA00FB7130 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0A7612C8103815FA00FB7130 /* CDataScanner_Extensions.h */,
+				0A7612C9103815FA00FB7130 /* CDataScanner_Extensions.m */,
+				0A7612CA103815FA00FB7130 /* NSCharacterSet_Extensions.h */,
+				0A7612CB103815FA00FB7130 /* NSCharacterSet_Extensions.m */,
+				0A7612CC103815FA00FB7130 /* NSDictionary_JSONExtensions.h */,
+				0A7612CD103815FA00FB7130 /* NSDictionary_JSONExtensions.m */,
+				0A7612CE103815FA00FB7130 /* NSScanner_Extensions.h */,
+				0A7612CF103815FA00FB7130 /* NSScanner_Extensions.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0A7612D0103815FA00FB7130 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				0A7612D1103815FA00FB7130 /* CJSONDeserializer.h */,
+				0A7612D2103815FA00FB7130 /* CJSONDeserializer.m */,
+				0A7612D3103815FA00FB7130 /* CJSONScanner.h */,
+				0A7612D4103815FA00FB7130 /* CJSONScanner.m */,
+				0A7612D5103815FA00FB7130 /* CJSONSerializer.h */,
+				0A7612D6103815FA00FB7130 /* CJSONSerializer.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		0A76132D10381CE800FB7130 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0A76132E10381D0900FB7130 /* Tweet.h */,
+				0A76132F10381D0900FB7130 /* Tweet.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		0A76135B1038211A00FB7130 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				0ABFEAE2103247BA00F707BA /* SearchTermEntryDelegate.h */,
+				0ACB560B1033D8CA00F466FF /* SearchTermsSaveDelegate.h */,
+				0A76135C1038214200FB7130 /* TwitterSearchResultDelegate.h */,
+			);
+			name = Delegates;
 			sourceTree = "<group>";
 		};
 		0ABFEA541032346C00F707BA /* Controllers */ = {
@@ -72,10 +174,8 @@
 				0ABFEA56103234DB00F707BA /* SearchTermTableViewController.m */,
 				0ABFEADF1032477F00F707BA /* SearchTermEntryTableViewController.h */,
 				0ABFEAE01032477F00F707BA /* SearchTermEntryTableViewController.m */,
-				0ABFEAE2103247BA00F707BA /* SearchTermEntryDelegate.h */,
 				0AF74F111032C33700BD7270 /* SearchTermEntryTableViewCell.h */,
 				0AF74F121032C33700BD7270 /* SearchTermEntryTableViewCell.m */,
-				0ACB560B1033D8CA00F466FF /* SearchTermsSaveDelegate.h */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -188,6 +288,16 @@
 				0ABFEA57103234DB00F707BA /* SearchTermTableViewController.m in Sources */,
 				0ABFEAE11032477F00F707BA /* SearchTermEntryTableViewController.m in Sources */,
 				0AF74F131032C33700BD7270 /* SearchTermEntryTableViewCell.m in Sources */,
+				0A7612251037BB3B00FB7130 /* TwitterSearchOperation.m in Sources */,
+				0A7612D9103815FA00FB7130 /* CDataScanner_Extensions.m in Sources */,
+				0A7612DA103815FA00FB7130 /* NSCharacterSet_Extensions.m in Sources */,
+				0A7612DB103815FA00FB7130 /* NSDictionary_JSONExtensions.m in Sources */,
+				0A7612DC103815FA00FB7130 /* NSScanner_Extensions.m in Sources */,
+				0A7612DD103815FA00FB7130 /* CJSONDeserializer.m in Sources */,
+				0A7612DE103815FA00FB7130 /* CJSONScanner.m in Sources */,
+				0A7612DF103815FA00FB7130 /* CJSONSerializer.m in Sources */,
+				0A7612E0103815FA00FB7130 /* CDataScanner.m in Sources */,
+				0A76133010381D0900FB7130 /* Tweet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

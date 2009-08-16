@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "SearchTermEntryDelegate.h"
 #import "SearchTermsSaveDelegate.h"
+#import "TwitterSearchResultDelegate.h"
 
-@interface SearchTermTableViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate, SearchTermEntryDelegate>
+@interface SearchTermTableViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate, SearchTermEntryDelegate, TwitterSearchResultDelegate>
 {
 	NSMutableArray *termsArray;
 }

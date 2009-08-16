@@ -51,6 +51,24 @@
 	self.navigationItem.leftBarButtonItem.enabled = ([termsArray count] == 0 ? NO : YES);
 }
 
+#pragma mark Methods from TwitterSearchResultDelegate
+- (void)searchDidFailWithError:(NSError *)error
+{
+	// Remove Loading UI
+	// Deselect TableCell
+	// Bring up UIAlertView
+}
+
+- (void)searchDidCompleteWithResults:(NSArray *)results
+{
+	// Remove Loading UI
+	
+    // Navigation logic may go here. Create and push another view controller.
+	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
+	// [self.navigationController pushViewController:anotherViewController];
+	// [anotherViewController release];
+}
+
 #pragma mark Methods from UIViewController
 - (void)viewDidLoad
 {
@@ -141,10 +159,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
-	// [self.navigationController pushViewController:anotherViewController];
-	// [anotherViewController release];
+	// Block UI (adding views Tweetie Style)
+	// Initialise NSOperation class with search term
+	// [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
