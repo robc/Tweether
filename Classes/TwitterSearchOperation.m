@@ -68,8 +68,6 @@
 
 - (void)deserialiseReturnedJSONForSearchResponse:(NSData *)searchResponse
 {
-	// Transform the results into an array of tweets (static, not mutable)
-	// Invoke the delegate's success method
 	NSError *error = nil;
 	NSDictionary *dictionary = [[CJSONDeserializer deserializer] deserializeAsDictionary:searchResponse error:&error];
 
