@@ -42,7 +42,7 @@
 	
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	if ([fileManager fileExistsAtPath:loadPath])
-		termsArray = [[[NSMutableArray alloc] initWithContentsOfFile:loadPath] retain];
+		termsArray = [[NSMutableArray alloc] initWithContentsOfFile:loadPath];
 	else
 		termsArray = [[NSMutableArray alloc] initWithCapacity:MaxNumberOfSearchTerms];
 }
