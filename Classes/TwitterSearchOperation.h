@@ -7,15 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "TwitterSearchResultDelegate.h"
 
 @interface TwitterSearchOperation : NSOperation
 {
+	id <TwitterSearchResultDelegate> delegate;
 	NSString *searchTerm;
-	NSMutableArray *resultTweetsArray;
 }
 
-@property (nonatomic, readonly) NSMutableArray *resultTweetsArray;
+@property (nonatomic, assign) id <TwitterSearchResultDelegate> delegate;
 
 - (id)initWithSearchTerm:(NSString *)term;
 - (NSString *)constructSearchURIWithSearchTerm:(NSString *)term;

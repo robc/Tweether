@@ -17,6 +17,7 @@
 		0A7612DF103815FA00FB7130 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7612D6103815FA00FB7130 /* CJSONSerializer.m */; };
 		0A7612E0103815FA00FB7130 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7612D8103815FA00FB7130 /* CDataScanner.m */; };
 		0A76133010381D0900FB7130 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A76132F10381D0900FB7130 /* Tweet.m */; };
+		0A7613BB1038CB1700FB7130 /* OperationQueuingDelegate.h in Resources */ = {isa = PBXBuildFile; fileRef = 0A7613BA1038CB1700FB7130 /* OperationQueuingDelegate.h */; };
 		0ABFEA57103234DB00F707BA /* SearchTermTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABFEA56103234DB00F707BA /* SearchTermTableViewController.m */; };
 		0ABFEAE11032477F00F707BA /* SearchTermEntryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABFEAE01032477F00F707BA /* SearchTermEntryTableViewController.m */; };
 		0AF74F131032C33700BD7270 /* SearchTermEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74F121032C33700BD7270 /* SearchTermEntryTableViewCell.m */; };
@@ -51,6 +52,8 @@
 		0A76132E10381D0900FB7130 /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
 		0A76132F10381D0900FB7130 /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
 		0A76135C1038214200FB7130 /* TwitterSearchResultDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterSearchResultDelegate.h; sourceTree = "<group>"; };
+		0A76137E1038C38E00FB7130 /* NetworkActivityDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkActivityDelegate.h; sourceTree = "<group>"; };
+		0A7613BA1038CB1700FB7130 /* OperationQueuingDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationQueuingDelegate.h; sourceTree = "<group>"; };
 		0ABFEA55103234DB00F707BA /* SearchTermTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTermTableViewController.h; sourceTree = "<group>"; };
 		0ABFEA56103234DB00F707BA /* SearchTermTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTermTableViewController.m; sourceTree = "<group>"; };
 		0ABFEADF1032477F00F707BA /* SearchTermEntryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTermEntryTableViewController.h; sourceTree = "<group>"; };
@@ -89,6 +92,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0A7613731038C20B00FB7130 /* Views */,
 				0A76135B1038211A00FB7130 /* Delegates */,
 				0A76132D10381CE800FB7130 /* Models */,
 				0A7612221037BB2100FB7130 /* Operations */,
@@ -163,8 +167,17 @@
 				0ABFEAE2103247BA00F707BA /* SearchTermEntryDelegate.h */,
 				0ACB560B1033D8CA00F466FF /* SearchTermsSaveDelegate.h */,
 				0A76135C1038214200FB7130 /* TwitterSearchResultDelegate.h */,
+				0A76137E1038C38E00FB7130 /* NetworkActivityDelegate.h */,
+				0A7613BA1038CB1700FB7130 /* OperationQueuingDelegate.h */,
 			);
 			name = Delegates;
+			sourceTree = "<group>";
+		};
+		0A7613731038C20B00FB7130 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		0ABFEA541032346C00F707BA /* Controllers */ = {
@@ -273,6 +286,7 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				0AF74F151032C46D00BD7270 /* SearchTermEntryTableViewCell.xib in Resources */,
+				0A7613BB1038CB1700FB7130 /* OperationQueuingDelegate.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

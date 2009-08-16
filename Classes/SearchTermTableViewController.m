@@ -8,15 +8,19 @@
 
 #import "SearchTermTableViewController.h"
 #import "SearchTermEntryTableViewController.h"
+#import "TwitterSearchOperation.h"
 #import "SearchTermsSaveDelegate.h"
 
 @implementation SearchTermTableViewController
 
 @synthesize termsArray;
+@synthesize networkActivityDelegate;
+@synthesize operationQueuingDelegate;
 
 #pragma mark Our custom methods
 - (void)showAddSearchTerm:(id)sender
 {
+	//
 	// OFMG. If we add the modalViewController directly, we do not get the NavigationBar!
 	// 
 	// To ensure the bar appears, we must first instantiate another UINavigationController
@@ -24,6 +28,7 @@
 	// present the UINavigationController instead of the ViewController.
 	// 
 	// Taken from: http://www.iphonedevsdk.com/forum/iphone-sdk-development/18705-modal-uiviewcontroller-title-not-showing.html
+	//
 	SearchTermEntryTableViewController *modalViewController = [[SearchTermEntryTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
 	UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:modalViewController];
 	modalViewController.delegate = self;
@@ -54,14 +59,21 @@
 #pragma mark Methods from TwitterSearchResultDelegate
 - (void)searchDidFailWithError:(NSError *)error
 {
-	// Remove Loading UI
-	// Deselect TableCell
-	// Bring up UIAlertView
+	if ([networkActivityDelegate conformsToProtocol:@protocol(NetworkActivityDelegate)])
+		[networkActivityDelegate hideNetworkActivityIndicators];
+
+	UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:@"Error Loading"
+														 message:[error localizedDescription]
+														delegate:nil
+											   cancelButtonTitle:@"Ok"
+											   otherButtonTitles:nil] autorelease];
+	[alertView show];
 }
 
 - (void)searchDidCompleteWithResults:(NSArray *)results
 {
-	// Remove Loading UI
+	if ([networkActivityDelegate conformsToProtocol:@protocol(NetworkActivityDelegate)])
+		[networkActivityDelegate hideNetworkActivityIndicators];
 	
     // Navigation logic may go here. Create and push another view controller.
 	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
@@ -80,7 +92,7 @@
 	self.navigationItem.title = @"Search Terms";
 	self.navigationItem.rightBarButtonItem = addBarButtonItem;
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-	
+
 	[addBarButtonItem release];
 }
 
@@ -159,9 +171,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	// Block UI (adding views Tweetie Style)
-	// Initialise NSOperation class with search term
-	// [tableView deselectRowAtIndexPath:indexPath animated:YES];
+	if ([networkActivityDelegate conformsToProtocol:@protocol(NetworkActivityDelegate)])
+		[networkActivityDelegate showNetworkActivityIndicators];
+
+	TwitterSearchOperation *searchOp = [[TwitterSearchOperation alloc] initWithSearchTerm:[termsArray objectAtIndex:indexPath.row]];
+	searchOp.delegate = self;
+	if ([operationQueuingDelegate conformsToProtocol:@protocol(OperationQueuingDelegate)])
+		[operationQueuingDelegate queueOperation:searchOp];
+	[searchOp release];	
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath

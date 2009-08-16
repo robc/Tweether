@@ -19,14 +19,16 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application
 {
-//	TwitterSearchOperation *searchOp = [[TwitterSearchOperation alloc] initWithSearchTerm:@"#xna"];
-//	[searchOp main];
+	operationQueue = [[NSOperationQueue alloc] init];
+	[operationQueue setMaxConcurrentOperationCount:1];
 	
 	navigationController = [[UINavigationController alloc] init];
 	SearchTermTableViewController *searchTermTableViewController = [[SearchTermTableViewController alloc] initWithStyle:UITableViewStylePlain];
 	
 	[self loadSavedTermsFromDisk];
 	searchTermTableViewController.termsArray = termsArray;
+	searchTermTableViewController.networkActivityDelegate = self;
+	searchTermTableViewController.operationQueuingDelegate = self;
 	[termsArray release];
 	
 	[navigationController pushViewController:searchTermTableViewController animated:NO];
@@ -51,6 +53,28 @@
 		termsArray = [[NSMutableArray alloc] initWithCapacity:MaxNumberOfSearchTerms];
 }
 
+- (void)dealloc
+{
+	[operationQueue release];
+	[navigationController release];
+    [window release];
+    [super dealloc];
+}
+
+#pragma mark -
+#pragma mark LoadingActivityViewDelegate methods
+- (void)showNetworkActivityIndicators
+{
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+}
+
+- (void)hideNetworkActivityIndicators
+{
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
+#pragma mark -
+#pragma mark SearchTermsSaveDelegate methods
 - (void)saveSearchTerms
 {
 	NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
@@ -58,10 +82,11 @@
 	[termsArray writeToFile:savePath atomically:YES];
 }
 
-- (void)dealloc
+#pragma mark -
+#pragma mark OperationQueuingDelegate methods
+- (void)queueOperation:(NSOperation *)operation
 {
-	[navigationController release];
-    [window release];
-    [super dealloc];
+	[operationQueue addOperation:operation];
 }
+
 @end

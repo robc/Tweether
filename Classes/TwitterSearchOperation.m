@@ -14,14 +14,13 @@
 
 @implementation TwitterSearchOperation
 
-@synthesize resultTweetsArray;
+@synthesize delegate;
 
 - (id)initWithSearchTerm:(NSString *)term
 {
 	if (self = [super init])
 	{
 		searchTerm = [term copy];
-		resultTweetsArray = [[NSMutableArray alloc] initWithCapacity:ResultTweetsCapacity];
 	}
 	
 	return self;
@@ -29,7 +28,6 @@
 
 - (void)dealloc
 {
-	[resultTweetsArray release];
 	[searchTerm release];
 	[super dealloc];
 }
@@ -45,10 +43,8 @@
 	
 	if ([error code] != 0)
 	{
-		NSLog(@"Can has error getting response from Twitter?");
-		NSLog(@"ERROR! Code: %i", [error code]);
-		NSLog(@"Description: %@", [error localizedDescription]);
-		// Invoke the searchRequestFailedWithError method on our delegate
+		if ([delegate conformsToProtocol:@protocol(TwitterSearchResultDelegate)])
+			[delegate searchDidFailWithError:error];
 	}
 	else
 		[self deserialiseReturnedJSONForSearchResponse:responseData];
@@ -79,10 +75,8 @@
 
 	if ([error code] != 0)
 	{
-		NSLog(@"Can has error deserialising JSON?");
-		NSLog(@"ERROR! Code: %i", [error code]);
-		NSLog(@"Description: %@", [error localizedDescription]);
-		// Invoke the searchRequestFailedWithError method on our delegate
+		if ([delegate conformsToProtocol:@protocol(TwitterSearchResultDelegate)])
+			[delegate searchDidFailWithError:error];
 	}
 	else
 	{

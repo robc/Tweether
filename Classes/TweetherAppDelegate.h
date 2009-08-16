@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "SearchTermsSaveDelegate.h"
+#import "NetworkActivityDelegate.h"
+#import "OperationQueuingDelegate.h"
 
-@interface TweetherAppDelegate : NSObject <UIApplicationDelegate, SearchTermsSaveDelegate>
+@interface TweetherAppDelegate : NSObject <UIApplicationDelegate, SearchTermsSaveDelegate, NetworkActivityDelegate, OperationQueuingDelegate>
 {
     UIWindow *window;
 	UINavigationController *navigationController;
 	NSMutableArray *termsArray;
+	NSOperationQueue *operationQueue;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
