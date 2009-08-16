@@ -55,9 +55,9 @@
 	// http://search.twitter.com/search.json?q=%23xna (will need to wrap in quotes if necessary)
 	// If there's spaces? replace them with a + and wrap in quotes (%22 chars)
 	
-	NSRange positionOfFirstString = [searchTerm rangeOfString:@" "];
+	NSRange positionOfFirstSpace = [searchTerm rangeOfString:@" "];
 	NSMutableString *urlEncodedSearchTerm = [NSMutableString stringWithString:[searchTerm stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];	
-	if (positionOfFirstString.location != NSNotFound)
+	if (positionOfFirstSpace.location != NSNotFound)
 	{
 		[urlEncodedSearchTerm insertString:@"%22" atIndex:0];
 		[urlEncodedSearchTerm insertString:@"%22" atIndex:([urlEncodedSearchTerm length] - 1)];		
