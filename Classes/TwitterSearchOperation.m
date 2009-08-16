@@ -90,8 +90,8 @@
 			[tweetsArray addObject:tweet];
 		}
 		
-		NSLog(@"tweetsArray: %@", tweetsArray);
-		// Invoke our delegate method which reports a success!
+		if ([delegate conformsToProtocol:@protocol(TwitterSearchResultDelegate)])
+			[delegate searchDidCompleteWithResults:tweetsArray];
 		[tweetsArray release];
 	}
 }

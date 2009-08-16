@@ -75,6 +75,9 @@
 	if ([networkActivityDelegate conformsToProtocol:@protocol(NetworkActivityDelegate)])
 		[networkActivityDelegate hideNetworkActivityIndicators];
 	
+	// NB: Results doesn't need to be retained here, but only inside
+	// our new ViewController - this method is just a proxy for it…
+	// 
     // Navigation logic may go here. Create and push another view controller.
 	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
 	// [self.navigationController pushViewController:anotherViewController];
