@@ -89,7 +89,7 @@
 		}
 		
 		if ([delegate conformsToProtocol:@protocol(TwitterSearchResultDelegate)])
-			[delegate searchDidCompleteWithResults:tweetsArray];
+			[delegate searchWithTerm:searchTerm didCompleteWithResults:tweetsArray];
 		[tweetsArray release];
 	}
 }

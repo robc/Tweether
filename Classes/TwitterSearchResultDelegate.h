@@ -10,6 +10,6 @@
 @optional
 - (void)searchDidFailWithError:(NSError *)error;
 @required
-- (void)searchDidCompleteWithResults:(NSArray *)results;
+- (void)searchWithTerm:(NSString *)term didCompleteWithResults:(NSArray *)results;
 @end
 

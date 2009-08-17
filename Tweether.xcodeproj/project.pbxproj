@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A22BB5E103988210029F348 /* TweetsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A22BB5D103988210029F348 /* TweetsListViewController.m */; };
 		0A7612251037BB3B00FB7130 /* TwitterSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7612241037BB3B00FB7130 /* TwitterSearchOperation.m */; };
 		0A7612D9103815FA00FB7130 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7612C9103815FA00FB7130 /* CDataScanner_Extensions.m */; };
 		0A7612DA103815FA00FB7130 /* NSCharacterSet_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7612CB103815FA00FB7130 /* NSCharacterSet_Extensions.m */; };
@@ -31,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A22BB5C103988210029F348 /* TweetsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetsListViewController.h; sourceTree = "<group>"; };
+		0A22BB5D103988210029F348 /* TweetsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetsListViewController.m; sourceTree = "<group>"; };
 		0A7612231037BB3B00FB7130 /* TwitterSearchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterSearchOperation.h; sourceTree = "<group>"; };
 		0A7612241037BB3B00FB7130 /* TwitterSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterSearchOperation.m; sourceTree = "<group>"; };
 		0A7612C8103815FA00FB7130 /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner_Extensions.h; sourceTree = "<group>"; };
@@ -189,6 +192,8 @@
 				0ABFEAE01032477F00F707BA /* SearchTermEntryTableViewController.m */,
 				0AF74F111032C33700BD7270 /* SearchTermEntryTableViewCell.h */,
 				0AF74F121032C33700BD7270 /* SearchTermEntryTableViewCell.m */,
+				0A22BB5C103988210029F348 /* TweetsListViewController.h */,
+				0A22BB5D103988210029F348 /* TweetsListViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 				0A7612DF103815FA00FB7130 /* CJSONSerializer.m in Sources */,
 				0A7612E0103815FA00FB7130 /* CDataScanner.m in Sources */,
 				0A76133010381D0900FB7130 /* Tweet.m in Sources */,
+				0A22BB5E103988210029F348 /* TweetsListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
