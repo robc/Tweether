@@ -19,10 +19,13 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application
 {
+	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackOpaque;
+	
 	operationQueue = [[NSOperationQueue alloc] init];
 	[operationQueue setMaxConcurrentOperationCount:1];
 	
 	navigationController = [[UINavigationController alloc] init];
+	navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
 	SearchTermTableViewController *searchTermTableViewController = [[SearchTermTableViewController alloc] initWithStyle:UITableViewStylePlain];
 	
 	[self loadSavedTermsFromDisk];

@@ -27,11 +27,12 @@
 }
 */
 
-/*
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
+- (void)loadView
+{
+	
+	
 }
-*/
 
 /*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -39,6 +40,33 @@
     [super viewDidLoad];
 }
 */
+
+- (void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	
+	// TODO: Want to make it so the navigation bar fades out (as the status bar does)
+	[UIView beginAnimations:@"fadeToTranslucentBlack" context:nil];
+	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackTranslucent;
+	[self navigationController].navigationBar.barStyle = UIBarStyleBlackTranslucent;
+	
+//	[[self navigationController] setNavigationBarHidden:YES	animated:NO];
+//	[[UIApplication sharedApplication] setStatusBarHidden:YES animated:YES];
+	[UIView commitAnimations];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+	[super viewWillDisappear:animated];
+
+	// TODO: Want to make it so the navigation bar fades in (as the status bar does)
+	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackOpaque;
+	[self navigationController].navigationBar.barStyle = UIBarStyleBlackOpaque;
+//	[[UIApplication sharedApplication] setStatusBarHidden:NO animated:YES];	
+//	[[self navigationController] setNavigationBarHidden:NO animated:NO];
+	
+	[UIView commitAnimations];
+}
 
 /*
 // Override to allow orientations other than the default portrait orientation.
