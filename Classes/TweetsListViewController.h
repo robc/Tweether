@@ -7,15 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Tweet.h"
 
 @interface TweetsListViewController : UIViewController
 {
+	NSTimer *timer;
+	NSInteger currentTweetPosition;
 	NSArray *tweetsArray;
+	UILabel *textLabel;
 }
 
 @property (nonatomic, retain) NSArray *tweetsArray;
 
 - (void)setTitle:(NSString *)title;
+- (void)fetchNextTweetFromTweetsArray:(NSTimer *)timer;
+- (Tweet *)fetchTweetFromTweetsArray:(NSInteger)index;
 
 @end

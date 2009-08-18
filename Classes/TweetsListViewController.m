@@ -12,34 +12,45 @@
 @implementation TweetsListViewController
 @synthesize tweetsArray;
 
+#pragma mark Custom Methods
 - (void)setTitle:(NSString *)title
 {
 	self.navigationItem.title = title;
 }
 
-/*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
-
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView
+- (void)fetchNextTweetFromTweetsArray:(NSTimer *)timer
 {
+	currentTweetPosition++;
+	if (currentTweetPosition >= [tweetsArray count])
+		currentTweetPosition = 0;
 	
+	textLabel.text = [self fetchTweetFromTweetsArray:currentTweetPosition].tweet;
+
+	CGSize allowedSize = CGSizeMake(([self.view frame].size.width - 20), 9999);	
+	CGSize textSize = [textLabel.text sizeWithFont:textLabel.font
+						         constrainedToSize:allowedSize
+									lineBreakMode:UILineBreakModeWordWrap];
 	
+	CGRect labelFrame = CGRectMake(0, 0, textSize.width, textSize.height);
+	textLabel.frame = labelFrame;
 }
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (Tweet *)fetchTweetFromTweetsArray:(NSInteger)index
+{
+	return ((Tweet *)[tweetsArray objectAtIndex:index]);
 }
-*/
+
+#pragma mark -
+#pragma mark UIViewController methods
+- (void)viewDidLoad
+{
+	[super viewDidLoad];
+	
+	textLabel = [[UILabel alloc] initWithFrame:self.view.frame];
+	textLabel.numberOfLines = 0;
+	textLabel.font = [UIFont boldSystemFontOfSize:17];
+	[self.view addSubview:textLabel];
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -53,18 +64,34 @@
 //	[[self navigationController] setNavigationBarHidden:YES	animated:NO];
 //	[[UIApplication sharedApplication] setStatusBarHidden:YES animated:YES];
 	[UIView commitAnimations];
+	
+	currentTweetPosition = -1;
+	[timer invalidate];
+	timer = [NSTimer scheduledTimerWithTimeInterval:5.0
+											 target:self
+										   selector:@selector(fetchNextTweetFromTweetsArray:)
+										   userInfo:nil
+											repeats:YES];
+	[self fetchNextTweetFromTweetsArray:timer];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
 
+	[timer invalidate];
+	// [timer release];
+	timer = nil;
+	
+	[textLabel removeFromSuperview];
+	// [timer invalidate];
+
 	// TODO: Want to make it so the navigation bar fades in (as the status bar does)
 	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackOpaque;
 	[self navigationController].navigationBar.barStyle = UIBarStyleBlackOpaque;
 //	[[UIApplication sharedApplication] setStatusBarHidden:NO animated:YES];	
 //	[[self navigationController] setNavigationBarHidden:NO animated:NO];
-	
+
 	[UIView commitAnimations];
 }
 
@@ -87,12 +114,10 @@
 	// e.g. self.myOutlet = nil;
 }
 
-
 - (void)dealloc
 {
+	[textLabel release];
 	[tweetsArray release];
     [super dealloc];
 }
-
-
 @end
