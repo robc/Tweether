@@ -24,14 +24,16 @@
 	if (currentTweetPosition >= [tweetsArray count])
 		currentTweetPosition = 0;
 	
-	textLabel.text = [self fetchTweetFromTweetsArray:currentTweetPosition].tweet;
+	textLabel.text = [[self fetchTweetFromTweetsArray:currentTweetPosition] description];
 
 	CGSize allowedSize = CGSizeMake(([self.view frame].size.width - 20), 9999);	
 	CGSize textSize = [textLabel.text sizeWithFont:textLabel.font
 						         constrainedToSize:allowedSize
 									lineBreakMode:UILineBreakModeWordWrap];
 	
-	CGRect labelFrame = CGRectMake(0, 0, textSize.width, textSize.height);
+	CGFloat x = round((self.view.frame.size.width - textSize.width) / 2);
+	CGFloat y = round((self.view.frame.size.height - textSize.height) / 2);
+	CGRect labelFrame = CGRectMake(x, y, textSize.width, textSize.height);
 	textLabel.frame = labelFrame;
 }
 
@@ -80,11 +82,9 @@
 	[super viewWillDisappear:animated];
 
 	[timer invalidate];
-	// [timer release];
 	timer = nil;
 	
 	[textLabel removeFromSuperview];
-	// [timer invalidate];
 
 	// TODO: Want to make it so the navigation bar fades in (as the status bar does)
 	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackOpaque;
