@@ -21,6 +21,7 @@
 		0A7613BB1038CB1700FB7130 /* OperationQueuingDelegate.h in Resources */ = {isa = PBXBuildFile; fileRef = 0A7613BA1038CB1700FB7130 /* OperationQueuingDelegate.h */; };
 		0ABFEA57103234DB00F707BA /* SearchTermTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABFEA56103234DB00F707BA /* SearchTermTableViewController.m */; };
 		0ABFEAE11032477F00F707BA /* SearchTermEntryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABFEAE01032477F00F707BA /* SearchTermEntryTableViewController.m */; };
+		0ADEE8AC103B87FC005F673A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ADEE8AB103B87FC005F673A /* QuartzCore.framework */; };
 		0AF74F131032C33700BD7270 /* SearchTermEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74F121032C33700BD7270 /* SearchTermEntryTableViewCell.m */; };
 		0AF74F151032C46D00BD7270 /* SearchTermEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AF74F141032C46D00BD7270 /* SearchTermEntryTableViewCell.xib */; };
 		1D3623260D0F684500981E51 /* TweetherAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* TweetherAppDelegate.m */; };
@@ -63,6 +64,7 @@
 		0ABFEAE01032477F00F707BA /* SearchTermEntryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTermEntryTableViewController.m; sourceTree = "<group>"; };
 		0ABFEAE2103247BA00F707BA /* SearchTermEntryDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTermEntryDelegate.h; sourceTree = "<group>"; };
 		0ACB560B1033D8CA00F466FF /* SearchTermsSaveDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTermsSaveDelegate.h; sourceTree = "<group>"; };
+		0ADEE8AB103B87FC005F673A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		0AF74F111032C33700BD7270 /* SearchTermEntryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTermEntryTableViewCell.h; sourceTree = "<group>"; };
 		0AF74F121032C33700BD7270 /* SearchTermEntryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTermEntryTableViewCell.m; sourceTree = "<group>"; };
 		0AF74F141032C46D00BD7270 /* SearchTermEntryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTermEntryTableViewCell.xib; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
+				0ADEE8AC103B87FC005F673A /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +246,7 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
+				0ADEE8AB103B87FC005F673A /* QuartzCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

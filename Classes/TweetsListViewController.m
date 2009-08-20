@@ -6,8 +6,8 @@
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
+#import <QuartzCore/CAAnimation.h>
 #import "TweetsListViewController.h"
-
 
 @implementation TweetsListViewController
 @synthesize tweetsArray;
@@ -24,9 +24,10 @@
 	if (currentTweetPosition >= [tweetsArray count])
 		currentTweetPosition = 0;
 	
+	[textLabel.layer removeAllAnimations];
 	textLabel.text = [[self fetchTweetFromTweetsArray:currentTweetPosition] description];
 
-	CGSize allowedSize = CGSizeMake(([self.view frame].size.width - 20), 9999);	
+	CGSize allowedSize = CGSizeMake(([self.view frame].size.width - 10), 9999);	
 	CGSize textSize = [textLabel.text sizeWithFont:textLabel.font
 						         constrainedToSize:allowedSize
 									lineBreakMode:UILineBreakModeWordWrap];
@@ -35,6 +36,26 @@
 	CGFloat y = round((self.view.frame.size.height - textSize.height) / 2);
 	CGRect labelFrame = CGRectMake(x, y, textSize.width, textSize.height);
 	textLabel.frame = labelFrame;
+	
+	// Just for the usage of the prototype. If we move to a full-scale application,
+	// this *will* need to be place in to a custom class so we can provide
+	// configurability!
+	CAKeyframeAnimation *animation = [CAKeyframeAnimation animation];
+	animation.duration = 5.0;
+	animation.removedOnCompletion = YES;
+	animation.keyPath = @"opacity";
+	animation.values = [NSArray arrayWithObjects: 
+						[NSNumber numberWithFloat:0.0], 
+						[NSNumber numberWithFloat:1.0], 
+						[NSNumber numberWithFloat:1.0], 
+						[NSNumber numberWithFloat:0.0], nil]; 
+	animation.keyTimes = [NSArray arrayWithObjects: 
+						  [NSNumber numberWithFloat:0.0],
+						  [NSNumber numberWithFloat:0.2],
+						  [NSNumber numberWithFloat:0.8],
+						  [NSNumber numberWithFloat:1.0], nil]; 
+
+	[textLabel.layer addAnimation:animation	forKey:nil];
 }
 
 - (Tweet *)fetchTweetFromTweetsArray:(NSInteger)index
@@ -51,6 +72,7 @@
 	textLabel = [[UILabel alloc] initWithFrame:self.view.frame];
 	textLabel.numberOfLines = 0;
 	textLabel.font = [UIFont boldSystemFontOfSize:17];
+	textLabel.opaque = NO;
 	[self.view addSubview:textLabel];
 }
 
@@ -92,7 +114,7 @@
 //	[[UIApplication sharedApplication] setStatusBarHidden:NO animated:YES];	
 //	[[self navigationController] setNavigationBarHidden:NO animated:NO];
 
-	[UIView commitAnimations];
+	// [UIView commitAnimations];
 }
 
 /*
